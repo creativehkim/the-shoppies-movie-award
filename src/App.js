@@ -18,8 +18,14 @@ const App = () => {
 
     setIsLoading(true);
 
+    
 
-    return data;
+    if(data.Search) {
+      setMovies(data.Search)
+      setIsLoading(false);
+    }
+    console.log(setMovies)
+
   }
 
   useEffect(() => {
@@ -39,7 +45,7 @@ const App = () => {
               onChange={(e) => setSearchValue(e.target.value)}
             />
               {movies.length > 0 ? 
-              <MoviesList /> :
+              <MoviesList isLoading={isLoading} movies={movies} setMovies={setMovies} searchValue={searchValue}/> :
               'No Movies To Show'
               } 
           </div>
