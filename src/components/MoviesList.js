@@ -1,17 +1,11 @@
-<<<<<<< HEAD
-import React from 'react'
-
-const MoviesList = () => {
-    return (
-        <div>
-            
-=======
 import React from 'react';
 import Spinner from './Loader';
 import Movie from './Movie';
 
 
-const MoviesList = ({movies, isLoading, searchValue}) => {
+const MoviesList = ({movies, isLoading, searchValue, onClick, nominatedMovies }) => {
+        console.log(nominatedMovies)
+
     return isLoading ? (
         <Spinner />) :
 
@@ -19,10 +13,16 @@ const MoviesList = ({movies, isLoading, searchValue}) => {
             <h1>Results for "{searchValue}"</h1>
             <ul className="movie-list">
                 {movies.map(movie => 
-                    <Movie key={movie.imdbID} movie={movie} {...movie} />
+                    <Movie 
+                        key={movie.imdbID} 
+                        movie={movie} 
+                        {...movie} 
+                        onClick={onClick}
+                        nominatedMovies={nominatedMovies}
+        
+                    />
                 )}
             </ul>
->>>>>>> 6d916d0 (Adding Movie component)
         </div>
     )
 }

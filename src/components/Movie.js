@@ -1,11 +1,10 @@
 import React from 'react';
 import placeholderImg from '../images/placeholder.png';
+import Button from './Button';
 
 
 const Movie = (props) => {
-  
-  // // let storedMovie = props.nominees.find(o => o.id === props.movie.id);
-  // const nominateDisabled = storedMovie ? true : false;
+
 
   return (
       <div className='movie'>
@@ -22,12 +21,12 @@ const Movie = (props) => {
           <span>{props.Year}</span>
         </div>
         <div className="movie-overlay">
-        <button 
-            className='nominate-btn'
-            
-            >
-            Nominate
-          </button>
+        <Button 
+          text='Nominate' 
+          onClick={props.onClick} 
+          movie={props.movie}
+          
+        />
         </div>
       </div>
     )} 

@@ -1,17 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 // import { useLocation } from 'react-router-dom';
-import Button from './Button.js'
+
+
 
 const Header = ({ title }) => {
-    const onClick = () => {
-        console.log('clicked')
-    }
-
     return (
-        <header className="header">
+        <header className="header-container">
             <h1>{title}</h1>
-            <Button color='grey' text='Nominated Movies' onClick={onClick}/>
+            <Link to='/nominated'>Nominated Movies</Link>
         </header>
     )
 }
